@@ -27,13 +27,17 @@ void trim(char* str)
 
 int main()
 {
-	char str[] = "a b ,cd,e f, ";
+	char str[] = "int:, int: , char:3:, float:4:, double:,";
 	trim(str);
 	char* s = str;
 	char* p;
+	char *t;
 	while(p = split(s, ','))
 	{
-		printf("%s\t", p);
+		while(t = split(p,':'))
+			printf("%s\t", t);
+
+		printf("\n");
 	}
 	return 0;
 }
